@@ -1,0 +1,17 @@
+1) Download Node js from Nodejs Website & Install it.
+
+2) Check node.js version
+  - open cmd & Enter "node -V"
+  - npm -V
+
+3) Install VS studio 
+
+4) Create Node app package
+  - open cmd & type "install -g create-react-app"
+
+5) Create the app using create-react-app command
+ - create new folder & open the folder -> select location and type "cmd" (automaticaly open cmp)
+ - create-react-app myapp (wait for creating app)
+ - cd myapp
+ - npm start
+ 
