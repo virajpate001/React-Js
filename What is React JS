@@ -1,0 +1,33 @@
+React JS : 
+- React.js is an open-source JavaScript library used for building user interfaces or UI components. 
+- particularly for single-page applications where user interaction is dynamic and frequent.
+- It was developed and is maintained by Facebook.
+
+Key features and concepts of React include:
+1) JSX (JavaScript XML):
+- JSX is a syntax extension for JavaScript that looks similar to XML or HTML. 
+- It allows developers to write HTML-like code within JavaScript files
+- making it easier to visualize and understand the structure of the UI.
+
+2) Component:
+- React applications are structured as components, which are reusable and modular building blocks.
+- Components encapsulate the logic and UI of a specific part of the application.
+
+3) One-Way Data Binding:
+- data in an application flows in a single direction, from parent components to child components.
+- This helps in managing the state of the application and makes it more predictable.
+
+4) Virtual DOM (Document Object Model)
+- React uses a virtual DOM to optimize rendering.
+- Instead of directly manipulating the actual DOM, React creates a virtual representation of it in memory. 
+- When there are changes, React calculates the most efficient way to update the real DOM.
+
+5) React Router: 
+- React Router is a library that enables navigation and routing in React applications.
+- It allows developers to define routes and map them to specific components.
+
+6) React Hooks: 
+- Hooks are functions that allow developers to use state and lifecycle features in functional components, enabling the use of stateful logic without writing a class.
+
+
+
