@@ -1,0 +1,31 @@
+1) index.html : is only one file of html. in whole app. 
+
+2) "src" folder you can create componants. 
+  E.g. i want aboutus page componant 
+    step 1) - crate new file in src folder "about.js"
+    step 2) - add basic code in "about.js" file
+    
+    import logo from './logo.svg'; // import logo from location
+    import './about.css'; // import css file
+   
+    function about() {
+       return (
+         <div className="test">
+         <h1>This is Viraj</h1>
+         <img src={logo} alt="logo"/>
+         </div>
+       );
+     }
+
+export default about; // export about us code
+
+    step 3) import about to main "index.js" file. open "index.js" file
+        import About from './about' // import about 
+    
+         root.render(
+           <React.StrictMode>
+             <App />
+             <About/> // add about 
+          </React.StrictMode>
+         );
+       
