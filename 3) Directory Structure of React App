@@ -1,0 +1,13 @@
+1) node_modules: This directory contains the dependencies and packages installed via npm or Yarn.
+
+2) public: This directory contains the static assets and the HTML file that serves as the entry point for the application. 
+           The index.html file is where the React application is mounted.
+
+3) src: This is the main source code directory where most of your application code resides.
+   a) assets: This directory is used to store static assets such as images, fonts, or other media files.
+   b) components: React components that are used throughout the application. 
+   c) pages: React components that represent individual pages or views of the application. Each page may consist of multiple components.
+   d) App.js: The main component that acts as the root component for the entire application.
+   e) index.js: The entry point for the React application. It typically renders the App component into the root HTML element defined in public/index.html.
+
+4) package.json: Configuration file that contains metadata about the project and lists dependencies, scripts, and other settings.
