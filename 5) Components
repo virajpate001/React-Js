@@ -3,4 +3,37 @@
 
 Types of components :
 1) Class Based 
+- Class-based components are JavaScript classes that extend from React's Component class
+- provide a way to define UI logic, handle state, and manage lifecycle methods. 
+
+Example 1) 
+import React, { Component } from 'react';
+class Counter extends Component{
+
+  render() {
+   return (
+     <div>
+         <div> <h2>Name : Viraj</h2></div>
+         <div> <h2>Age : 25</h2></div>
+     </div>
+   );
+  }
+}
+
+export default Person;
+
+
+
 2) Function Based 
+- Functional components are JavaScript functions that return JSX to describe the UI.
+- Functional components gained the ability to manage state and use lifecycle methods
+
+Example 1) 
+import React from "react";
+
+function Man(){
+   return <h1>Hello Viraj</h1>
+}
+
+export default Man;
+
