@@ -1,0 +1,6 @@
+- Extension to javaScript language syntax 
+- JSX = Javascript and XML
+- JSX also contain all the HTML like attributes.
+- JSX make the code simple and look elegant. 
+
+Note : for UI we can also use "React.createElement()" method for ui development.
