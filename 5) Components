@@ -1,0 +1,6 @@
+- Components are independent and reusable bits of code 
+- Components are javascript files. 
+
+Types of components :
+1) Class Based 
+2) Function Based 
