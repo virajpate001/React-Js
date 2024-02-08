@@ -23,3 +23,41 @@ Example 1) Create Props using Function Components
   );
   }
  export default App;
+
+
+Example 2) Create Props using Class base Components
+1) Create Class Base component "personclass.js"
+ - import React, { Component } from 'react'
+   class personclass extends Component {
+     constructor(props){
+      super(props);
+      this.props = props;
+     }
+  render() {
+    return (
+      <div>
+        <div className='innerDiv'>
+        Sirname is {this.props.lname}
+        </div>
+        <div className='innerDiv'>
+        Age is {this.props.age}
+        </div>
+      </div>
+   )
+  }
+}
+export default personclass;
+
+2) import on app.class 
+- import Personclass from './components/personclass';
+   function App() {
+  return (
+    <div>
+      <Personclass lname="Pate" age="20"></Personclass>
+    </div>
+  );
+}
+export default App;
+
+
+
