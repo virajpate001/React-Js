@@ -1,0 +1,41 @@
+- State is built-in object of the React Component 
+- The state object is used to store all the data that belongs to that particular component only. 
+- the state is only accessible inside the component it belongs to.
+- State is mutable , it can be change as per need.
+- Whenever the state object changes the component is re-rendered.
+- To use state inside a class component "this.state" is used.
+- To use state inside a functional component "useState" hook is used. 
+
+Example 1) using Class Component 
+1) Create personclass.js
+
+ import React, { Component } from 'react'
+ class personclass extends Component {
+  constructor(props){
+      super(props);
+      this.props = props;
+
+      this.state = { // assign state value 
+        name : "Viraj",
+        age : 25
+       }
+      }
+     }
+
+  render() {
+    return (
+      <div>
+        <div className='innerDiv'>
+        Name is {this.state.name}
+        </div>
+        <div className='innerDiv'>
+        Age is {this.state.age}
+        </div>
+      </div>
+    )
+  }
+}
+
+export default personclass;
+
+2) Import on app.js 
