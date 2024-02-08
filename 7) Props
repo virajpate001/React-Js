@@ -1,0 +1,5 @@
+- React is a component-based library which divides the UI into little reusable pieces.
+- In some cases, those components need to communicate(Send data to each other) and the way to pass data between component is by using props. 
+- "Props" is a special keyword in React , which stand for properties and is being used for passing data from one component to another. 
+- But the important part here is that data with props are being passes a uni-directional flow. (one way from parent to child).
+- Props is "Object" 
