@@ -3,3 +3,23 @@
 - "Props" is a special keyword in React , which stand for properties and is being used for passing data from one component to another. 
 - But the important part here is that data with props are being passes a uni-directional flow. (one way from parent to child).
 - Props is "Object" 
+
+
+Example 1) Create Props using Function Components
+1) Create Function Components "person.js"
+ - import React from 'react'
+    const Person1 = (props) => {
+    return (
+    <div>Hello {props.name}</div>
+    )
+    }
+   export default Person1; 
+
+2) import on App.js
+- import Person1 from './components/person';
+  function App() {
+  return (
+    <Person1 name="Viraj"></Person1>
+  );
+  }
+ export default App;
