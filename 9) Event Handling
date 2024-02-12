@@ -1,0 +1,53 @@
+-  Event handling is similar to handling events in regular JavaScript, but with a few differences due to JSX syntax and React's synthetic event system. 
+
+1) Event Naming:  Event names in React are written in camelCase, rather than lowercase, 
+                  to align with JavaScript conventions. For example, onClick, onChange, onSubmit, etc.
+
+2) Event Handlers: Event handlers are functions that are called when a specific event occurs.
+                  -  In JSX, you pass a reference to the event handler function using curly braces. 
+                  - You typically define event handler functions as methods within a class component or as arrow functions within a functional component.
+
+3) Synthetic Events: React wraps the native DOM events with its own synthetic event system, which provides cross-browser compatibility and performance optimizations. 
+
+
+
+
+Example 1) Event handling Using Class Base
+
+import React, {Component} from 'react';
+
+class Person extends Component{
+
+    myFunction = () => { // create arrow function
+        console.log("Hello");
+      }
+
+    render(){
+        return(
+            <div>
+                 
+                 <button onClick={this.myFunction}>classSub</button> // Call the function 
+            </div>      
+        );
+    }
+}
+
+
+
+Example 2) Event handling Using Function Base
+
+import React from 'react'
+
+const Person1 = () => {
+  const handleClick = () =>{  // Event handler function for onClick
+    console.log("Viraj");
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Test</button> // Call the Function
+    </div>
+  )
+}
+
+export default Person1; 
