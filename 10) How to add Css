@@ -1,0 +1,41 @@
+1) External Css 
+- create css file and import 
+
+Example 1) 
+import React from 'react'
+import "./person.css";
+
+const Person1 = () => {
+  return (
+    <div>
+      <h1>This is test</h1>
+      <p className='para'>This is para</p>
+    </div>
+  )
+}
+
+export default Person1; 
+
+
+
+2) Inline Css 
+
+Example 2) 
+import React from 'react'
+
+const Person1 = () => {
+  return (
+    <div>
+     <h3 style={{fontSize:"30px"}}>Big</h3>
+    </div>
+  )
+}
+
+export default Person1;
+
+
+3) Module Style fo Componant 
+- css only for that componat 
+- just change name of css file "person.css" to "person.module.css"
+- change import text to "import PersonStyle from "./person.module.css";"
+- <p className={PersonStyle.para}>This is para</p>
