@@ -1,0 +1,2 @@
+- Rendering a list in a React component involves mapping over an array of items and rendering individual list items. 
+- example we can add blog name, date, auther dynamically.
