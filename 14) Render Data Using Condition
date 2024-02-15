@@ -1,0 +1,58 @@
+We can Add condition for Rendering Data .. eample we can set button for display data or hide data. 
+
+Example ) 
+
+import React, { Component } from 'react'
+import Person1 from "./components/person.js";
+
+ class App extends Component {
+  
+   constructor(props){
+       super(props);
+       this.state = {
+         person : [
+           {
+            name: "Viraj",
+            lname: "Pate",
+           },
+           {
+            name: "Ashu",
+            lname: "Nhagat",
+           },
+           {
+            name: "aditya",
+            lname: "daple",
+           },
+           
+         ],
+
+         isShow : true,
+       }
+   }
+
+    Myfunction = () =>{
+     this.setState({isShow: !this.state.isShow});
+   }
+   
+  render() {
+    let persons; 
+      if(this.state.isShow){
+        persons = this.state.person.map((data, index) => {
+          return <Person1 key={index} name={data.name} lname={data.lname} />;
+      });
+      console.log(this.state.isShow);
+      }
+      else{
+        persons = "";
+        console.log(this.state.isShow);
+      }
+
+    return (
+      <div>
+        <button onClick={this.Myfunction}>Click here</button>
+        {persons}</div>
+    )
+  }
+}
+
+export default App;
