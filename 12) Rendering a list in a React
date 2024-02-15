@@ -1,2 +1,3 @@
 - Rendering a list in a React component involves mapping over an array of items and rendering individual list items. 
 - example we can add blog name, date, auther dynamically.
+- This approach dynamically generates list items based on the contents of the array, making it easy to render lists of any size.
