@@ -1,3 +1,120 @@
 - Rendering a list in a React component involves mapping over an array of items and rendering individual list items. 
 - example we can add blog name, date, auther dynamically.
 - This approach dynamically generates list items based on the contents of the array, making it easy to render lists of any size.
+
+- There are Two Ways 
+
+1) Using Copy Paste componant again and again
+
+Example 1) 1st method 
+
+- Create Person Component and assign in "App.js"
+
+import React, { Component } from 'react'
+
+export default class person extends Component {
+
+   constructor(props){
+    super(props);
+    this.props = props;
+   }
+
+  render() {
+    return (
+      <div>
+        <h3>My Is {this.props.name}</h3>
+        <h3>My Sirname is {this.props.lname}</h3>
+      </div>
+    )
+  }
+}
+
+- app.js
+
+import React, { Component } from 'react'
+import Person1 from "./components/person.js";
+
+ class App extends Component {
+  
+   constructor(props){
+       super(props);
+       this.state = {
+         person : [
+           {
+            name: "Viraj",
+            lname: "Pate",
+           },
+           {
+            name: "Ashu",
+            lname: "Nhagat",
+           },
+           {
+            name: "aditya",
+            lname: "daple",
+           }
+         ],
+       }
+   }
+   
+  render() {
+    return (
+      <div>
+        <Person1 name={this.state.person[0].name} lname={this.state.person[0].lname}/>
+        <Person1 name={this.state.person[1].name} lname={this.state.person[1].lname}/>
+        <Person1 name={this.state.person[2].name} lname={this.state.person[2].lname}/>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+
+2) Second Method mapping over an array of items
+Example ) Method 2- aaray map method
+
+- Person.js Componant same as above code
+
+- app.js 
+
+import React, { Component } from 'react'
+import Person1 from "./components/person.js";
+
+ class App extends Component {
+  
+   constructor(props){
+       super(props);
+       this.state = {
+         person : [
+           {
+            name: "Viraj",
+            lname: "Pate",
+           },
+           {
+            name: "Ashu",
+            lname: "Nhagat",
+           },
+           {
+            name: "aditya",
+            lname: "daple",
+           }
+         ],
+       }
+   }
+   
+  render() {
+
+     let persons = this.state.person.map((data) => {
+         return <Person1 name={data.name} lname={data.lname} />;
+     });
+
+    return (
+      <div>{persons}</div>
+    )
+  }
+}
+
+export default App;
+
+
