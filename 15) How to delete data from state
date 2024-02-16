@@ -1,0 +1,87 @@
+We can delete data from state (List)
+
+Example )
+
+- person.js
+
+import React, { Component } from 'react'
+
+export default class person extends Component {
+
+   constructor(props){
+    super(props);
+    this.props = props;
+   }
+
+  render() {
+    return (
+      <div onClick={this.props.remove}>
+        <h3>My Is {this.props.name}</h3>
+        <h3>My Sirname is {this.props.lname}</h3>
+      </div>
+    )
+  }
+}
+
+- App.js
+
+import React, { Component } from 'react'
+import Person1 from "./components/person.js";
+
+ class App extends Component {
+  
+   constructor(props){
+       super(props);
+       this.state = {
+         person : [
+           {
+            name: "Viraj",
+            lname: "Pate",
+           },
+           {
+            name: "Ashu",
+            lname: "Nhagat",
+           },
+           {
+            name: "aditya",
+            lname: "daple",
+           },
+           
+         ],
+
+         isShow : true,
+       }
+   }
+
+    Myfunction = () =>{
+     this.setState({isShow: !this.state.isShow});
+   }
+
+   removeHandeler =(personIndex)=>{
+     const personCopy = this.state.person;
+     personCopy.splice(personIndex, 1);
+     this.setState({person: personCopy});
+   }
+   
+  render() {
+    let persons; 
+      if(this.state.isShow){
+        persons = this.state.person.map((data, index) => {
+          return <Person1 key={index} name={data.name} lname={data.lname} remove={()=> this.removeHandeler(index)} />;
+      });
+      console.log(this.state.isShow);
+      }
+      else{
+        persons = "";
+        console.log(this.state.isShow);
+      }
+
+    return (
+      <div>
+        <button onClick={this.Myfunction}>Click here</button>
+        {persons}</div>
+    )
+  }
+}
+
+export default App;
