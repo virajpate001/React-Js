@@ -1,0 +1,38 @@
+- A controlled component in React is a form element, such as an input or textarea, whose value is controlled by React state. 
+- Instead of letting the DOM handle the form data, you keep track of the input's value in the component's state and update it through event handlers.
+
+Example ) controledcomponent.js
+
+import React, { Component } from 'react'
+
+class controledcomponent extends Component {
+    
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         name : "Viraj",
+      }
+    }
+
+    onChnagelistner = (event) =>{
+       console.log(this.state);
+       const name = event.target.value;
+        
+       this.setState({name},() =>{
+        console.log(name);
+       
+       } );
+       
+    }
+
+  render() {
+    return (
+      <div>
+        <input type='text' name='user_name' placeholder='your name' value={this.state.name} onChange={this.onChnagelistner}/>
+      </div>
+    )
+  }
+}
+
+export default controledcomponent;
