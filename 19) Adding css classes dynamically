@@ -1,0 +1,57 @@
+We can add css dyanamicaly 
+
+steps:
+1) 
+- let classBtn = ["button", "btn"]; 
+-  <button type='button' className={classBtn.join(" ")} </button> // assign variable here
+
+
+
+
+Example 
+
+import React, { Component } from 'react'
+
+ class register extends Component {
+
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         
+      }
+    }
+
+    
+
+  render() {
+    
+
+    let btnTxt, passType;
+
+    let classBtn = ["button", "btn"]; // Create variable for Css
+
+    if(this.props.showPass === true){
+       
+       btnTxt = "Hide Password";
+       passType = "text"
+       classBtn.push("btn-danger")
+    }
+    else{
+      btnTxt = "Show Password";
+      passType = "password";
+      classBtn.push("btn-success")
+    }
+
+    return (
+      <div className='container card'>
+         <button type='button' className={classBtn.join(" ")} onClick={this.props.passClick}>{btnTxt}</button> // assign variable here 
+      </div>
+    )
+  }
+}
+
+export default register;
+
+
+Note: for above code check 18 number post code. 
