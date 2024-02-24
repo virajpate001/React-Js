@@ -35,3 +35,13 @@ const Button = styled.button`
   }
 
  <Button>Click me</Button> 
+
+
+
+
+
+2) Prop inside a Styled Component
+background-color: ${(props) => props.bgcolor};
+
+<LoginBtn type='button' bgcolor="#000">LoginBtn</LoginBtn>
+<LoginBtn type='button'bgcolor="yellow">Forgot password</LoginBtn>
