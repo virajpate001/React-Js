@@ -9,7 +9,7 @@
 4) Create Node app package
   - open cmd & type "install -g create-react-app"
 
-5) Create the app using create-react-app command
+5) Create the app using create-react-app command (use this step for creating new project)
  - create new folder & open the folder -> select location and type "cmd" (automaticaly open cmp)
  - create-react-app myapp (wait for creating app)
  - cd myapp
