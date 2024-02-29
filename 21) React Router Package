@@ -1,0 +1,56 @@
+install React Router 
+
+1) Open your terminal or command prompt.
+2) Navigate to your React project directory.
+3) Run the following command:
+  npm install react-router-dom
+
+
+After installing React Router, you can import various components and utilities from the react-router-dom 
+- BrowserRouter: A router component that uses HTML5 history API to keep UI in sync with the URL.
+- Route: A component that renders UI when the path matches the current URL. 
+- Switch: A component that renders the first child <Route> or <Redirect> that matches the location.
+- Link: A component for declarative navigation around the application.
+- NavLink: A special version of the <Link> component that adds styling attributes when the link is active.
+- Redirect: A component that renders a new route to the specified location.
+- useHistory: A hook that gives access to the history object used by the router.
+- useParams: A hook that gives access to the URL parameters. 
+
+E.g 
+
+App.js
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+render() {
+    return (
+      <Router>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home heading="Welcome" />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+         
+       
+        <Footer />
+      </Router>
+    );
+  }
+
+
+header.js
+import {Link} from "react-router-dom";
+<nav>
+        <ul className="flex space-x-4">
+          <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+          <li><Link to="about" className="hover:text-gray-300">About</Link></li>
+          <li><Link to="#" className="hover:text-gray-300">Services</Link></li>
+          <li><Link to="contact" className="hover:text-gray-300">Contact</Link></li>
+        </ul>
+      </nav>
+
+
+
+
+
