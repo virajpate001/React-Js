@@ -51,6 +51,16 @@ import {Link} from "react-router-dom";
       </nav>
 
 
+* How Create 404 Page 
+
+add below Code 
+<Routes>
+          <Route path="/" element={<Home heading="Welcome" />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound/>} /> // you can add NotFound Componant for 404 Page
+  </Routes>
+
 
 
 
