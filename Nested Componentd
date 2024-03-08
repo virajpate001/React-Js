@@ -1,0 +1,36 @@
+We can create  child component in same Component 
+
+
+Example: 
+
+import React, { Component } from 'react'
+
+ class classbase extends Component {
+ 
+
+  render() {
+    const NestedChildComponent  = ()=>{ // function base
+        return <div>
+            <h2>Child Component</h2>
+        </div>
+    }
+
+    class NestedChildComponent2 extends Component{ // class base
+      render(){
+        return <div>
+          <h3>Child 2</h3>
+      </div>
+      }
+    }
+
+    return (
+      <div>
+        <h1>Parent Component</h1>
+        <NestedChildComponent />
+        <NestedChildComponent2/>
+      </div>
+    )
+  }
+}
+
+export default classbase;
