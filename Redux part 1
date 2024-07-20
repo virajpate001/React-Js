@@ -1,0 +1,27 @@
+- Redux is a predictable state management library for JavaScript applications. 
+- commonly used with React to manage the state of the application in a centralized way.
+
+A) 3 core concepts :
+  1) Store : A store that holds the state of your application.
+  2) Action : A Action that describe the type of change in the state of the application. 
+              "What to Do"
+  3) Reducer : A reducer which actually does the state transition depending on the action.
+              "How to Do"
+
+
+1) Store:
+       - The Redux store brings together the state, actions and reducers. 
+       - We have only a single store in a Reducx Application.  
+
+2) Action: 
+      - Action are plain javascript Object. 
+      - it has a type field.
+      - actions only tell "what to do", but they don't tell how to do.
+  e.g. : return{
+                  type: 'INCREMENT'
+               }
+
+3) Reducers:
+         - Reducers are functions that take the initial state/current state/previous state and action as arguments and return a new state
+
+      e.g : we get cuttet fruits (initial state And Action) & we added in mixer(Reducer) & then make a juice(New State).
