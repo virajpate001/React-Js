@@ -1,0 +1,11 @@
+1)install libraries 
+    npm install react-redux
+    npm install redux
+
+2) Setup the Folders
+
+src- actions (folder) -> index.js
+   - reducers (folder) -> index.js
+                          inc_dec.js
+   - store.js(file)
+   
