@@ -1,0 +1,32 @@
+A) 1st Principle : 
+ SINGLE SOURCE OF TRUTH 
+ - The state of your whole application is stored in an object tree within in a single store. 
+ - The global state of your application is stored as an object inside a single store. 
+ - Maintain our application state in a single object which would be managed by the Redux store.
+
+App State --> Single Object --> Redux Store.
+
+B) 2nd Principle : 
+  STATE IS READ ONLY (IMMUTABLE)
+- you are not allowed to directly update the state object. 
+- the only way to change the state is to emit an action (an object describing what happened)
+- To update the state of your application , you need yo let Redux know about that with an action.
+
+Example : Mobile Shop 
+Let the shopkeeper know about our action -> BUY_ MOBILE
+
+C) 3rd Princile :
+  CHANGES ARE MADE WITH PURE REDUCERS
+ - To specify how the state tree is transformed by actions, you write pure reducers. 
+
+Reducer -> (InitialState , action) -> newState
+
+Example : Mobile Shop 
+Reducer is the shopkeeper 
+
+
+
+
+##) Data Flow of Redux 
+
+Redux(State) -->(Subscribe)--> APPLICATION --> (Dispatch)==> ACTION --> (Type) --> REDUCER --> Redux(State)
