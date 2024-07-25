@@ -1,0 +1,94 @@
+## Flow of Redux Tool Kit 
+Application -> Action -> Dispatch -> Slice -> State Update -> Store 
+
+## Install Redux Toolkit 
+- npm install @reduxjs/toolkit
+
+## Create Folder 
+-Src - reduxToolkit(Folder) - counterSlice.js
+                            - store.js
+
+
+
+## counterSlice.js
+import { createSlice } from '@reduxjs/toolkit'
+
+const initialState = {
+	count: 0
+}
+
+export const counterSlice = createSlice({
+	name: 'counter',
+	initialState,
+	reducers: {
+		increment: (state) => {
+			state.count += 1
+		},
+		decrement: (state) => {
+			state.count -= 1
+		}
+	}
+})
+
+export const { increment, decrement } = counterSlice.actions
+export default counterSlice.reducer
+
+
+
+## store.js
+import { configureStore } from '@reduxjs/toolkit'
+import counterSlice from './counterSlice'
+
+export const store = configureStore({
+	reducer: {
+        counter: counterSlice
+    }
+})
+
+
+## Open main.js file & add
+import { store } from './reduxToolkit/store.js'
+import { Provider } from 'react-redux'
+
+      <Provider store={store}>
+				<App />
+			</Provider>
+
+
+## Redux 
+
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment } from '../../reduxToolkit/counterSlice'
+
+const Redux = () => {
+	const myState = useSelector((state) => state.counter.count)
+	const dispatch = useDispatch()
+
+	return (
+		<div>
+			<input
+				type="number"
+				name="num"
+				value={myState}
+				className="border mb-2"
+			/>
+			<br />
+			<button
+				onClick={() => dispatch(increment())}
+				className="bg-green-400 px-2 py-2 mr-2"
+			>
+				Add
+			</button>
+
+			<button
+				onClick={() => dispatch(decrement())}
+				className="bg-red-400 px-2 py-2"
+			>
+				Minus
+			</button>
+		</div>
+	)
+}
+
+export default Redux
