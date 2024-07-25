@@ -8,4 +8,48 @@ src- actions (folder) -> index.js
    - reducers (folder) -> index.js
                           inc_dec.js
    - store.js(file)
-   
+
+3) how to add code (Check on codedamn) 
+ 1) action - index.js (add code of action)
+ 2) reducers - inc_dec.js (add logic code in reducer)
+ 3)  reducers - index.js (add root code)
+ 4) store.js (create store & assign root reducer file in it)
+ 5) main.js (import store.j & Provider from react-redux)
+          - <Provider store={store}>
+				<App />
+			</Provider>
+ 6) main componant file (redux.js) 
+    - import { useDispatch, useSelector } from 'react-redux'
+      import { decrese, increse } from '../../actions'
+     
+const Redux = () => {
+	const myState = useSelector((state) => state.inc_dec)
+	const dispatch = useDispatch()
+
+	return (
+		<div>
+			<input
+				type="number"
+				name="num"
+				value={myState}
+				className="border mb-2"
+			/>
+			<br />
+			<button
+				onClick={() => dispatch(increse())}
+				className="bg-green-400 px-2 py-2 mr-2"
+			>
+				Add
+			</button>
+
+			<button
+				onClick={() => dispatch(decrese())}
+				className="bg-red-400 px-2 py-2"
+			>
+				Minus
+			</button>
+		</div>
+	)
+}
+
+export default Redux
