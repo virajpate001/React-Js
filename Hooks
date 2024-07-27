@@ -1,0 +1,51 @@
+-In React, hooks are functions, that let you use state and other React features. 
+- Provide a more functional approach to managing state and side effects in React components.
+
+Here are some of the most commonly used hooks:
+
+### 1) useState
+- Allows you to add state to functional components.
+Syntax : const [state, setState] = useState(initialState);
+
+Eg: 
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+
+
+### 2) useEffect
+- Allows you to perform side effects in functional components (e.g., data fetching, subscriptions).
+Syntax : 
+useEffect(() => {
+  // side effect code
+  return () => {
+    // cleanup code (optional)
+  };
+}, [dependencies]);
+
+
+
+## 3) useContext
+- Allows you to access context values in functional components.
+
+Syntax:
+const value = useContext(MyContext);
+
+## 4) useReducer
+- A hook for managing complex state logic that involves multiple sub-values.
+Syntax:
+const [state, dispatch] = useReducer(reducer, initialState);
+
+
