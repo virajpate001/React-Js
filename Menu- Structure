@@ -1,0 +1,31 @@
+           <Menu
+				allowHover
+				animate={{
+					mount: { x: 0 },
+					unmount: { x: 25 }
+				}}
+			>
+				<MenuHandler>
+					<Button> Menu</Button>
+				</MenuHandler>
+				<MenuList>
+					<MenuItem>Menu Item 1</MenuItem>
+					<MenuItem>Menu Item 1</MenuItem>
+					<Menu
+						placement="right-start"
+						open={openMenu}
+						handler={setOpenMenu}
+						allowHover
+						offset={15}
+					>
+						<MenuHandler className="flex items-center justify-between">
+							<MenuItem>Nested Item </MenuItem>
+						</MenuHandler>
+						<MenuList className="max-h-72">
+							<MenuItem>Nested Item 1</MenuItem>
+							<MenuItem>Nested Item 2</MenuItem>
+							<MenuItem>Nested Item 3</MenuItem>
+						</MenuList>
+					</Menu>
+				</MenuList>
+			</Menu>
