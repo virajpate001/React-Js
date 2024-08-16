@@ -1,0 +1,128 @@
+import React from 'react'
+import {
+	Navbar,
+	Collapse,
+	Typography,
+	Button,
+	IconButton,
+	List,
+	ListItem,
+	Menu,
+	MenuHandler,
+	MenuList,
+	MenuItem
+} from '@material-tailwind/react'
+import { CiMenuFries } from 'react-icons/ci'
+import { RxCross2 } from 'react-icons/rx'
+import { Link } from 'react-router-dom'
+
+const NavList = () => {
+	return (
+		<ul className="flex gap-8">
+			<li>
+				<Link>Home</Link>{' '}
+			</li>
+			<li>
+				<Link>About</Link>
+			</li>
+			<li>
+				<Menu
+					allowHover
+					animate={{
+						mount: { x: 0 },
+						unmount: { x: 25 }
+					}}
+				>
+					<MenuHandler>
+						<Link>Shop</Link>
+					</MenuHandler>
+					<MenuList>
+						<MenuItem>Shirt</MenuItem>
+						<MenuItem>Pant</MenuItem>
+						<Menu placement="right-start" allowHover offset={15}>
+							<MenuHandler className="flex items-center justify-between">
+								<MenuItem>
+									<Link>T Shirt</Link>
+								</MenuItem>
+							</MenuHandler>
+							<MenuList>
+								<MenuItem>
+									<Link>Polo</Link>
+								</MenuItem>
+								<MenuItem>
+									<Link>Oversize</Link>
+								</MenuItem>
+							</MenuList>
+						</Menu>
+					</MenuList>
+				</Menu>
+			</li>
+			<li>
+				<Link>Blog</Link>
+			</li>
+			<li>
+				<Link>Contact</Link>
+			</li>
+		</ul>
+	)
+}
+
+function CusNavbar() {
+	const [openNav, setOpenNav] = React.useState(false)
+
+	React.useEffect(() => {
+		window.addEventListener(
+			'resize',
+			() => window.innerWidth >= 960 && setOpenNav(false)
+		)
+	}, [])
+	return (
+		<>
+			<Navbar className="mx-auto max-w-screen-xl px-4 py-2 text-black">
+				<div className="flex items-center justify-between text-blue-gray-900">
+					<Typography
+						as="a"
+						href="#"
+						variant="h6"
+						className="mr-4 cursor-pointer py-1.5 lg:ml-2"
+					>
+						Material Tailwind
+					</Typography>
+					<div className="hidden lg:block">
+						<NavList />
+					</div>
+					<div className="hidden gap-2 lg:flex">
+						<Button size="sm">Get Started</Button>
+						<Button variant="outlined" size="sm">
+							Log In
+						</Button>
+					</div>
+					<button
+						variant="text"
+						className="lg:hidden"
+						onClick={() => setOpenNav(!openNav)}
+					>
+						{openNav ? (
+							<RxCross2 className="h-6 w-6" strokeWidth={2} />
+						) : (
+							<CiMenuFries className="h-6 w-6" strokeWidth={2} />
+						)}
+					</button>
+				</div>
+				<Collapse open={openNav}>
+					<NavList />
+					<div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+						<Button size="sm" fullWidth>
+							Get Started
+						</Button>
+						<Button variant="outlined" size="sm" fullWidth>
+							Log In
+						</Button>
+					</div>
+				</Collapse>
+			</Navbar>
+		</>
+	)
+}
+
+export default CusNavbar
