@@ -1,0 +1,31 @@
+ Previous Version
+
+ 1. Using git checkout to Restore a Specific File
+
+     - If you’ve made changes to a file but haven’t committed them yet, you can revert the file to the last committed state:
+     --> git checkout -- path/to/your/file
+
+ 2. Reverting to a Previous Commit
+     
+     - If you want to go back to a previous commit and discard changes made after that commit, you can use:
+     --> git reset --hard <commit-hash>
+
+     - Find the Commit Hash
+     --> git log
+
+3. Checking Out a Previous Commit Without Losing Work
+
+     - If you want to view the state of your project at a previous commit without losing your current work, you can create a new branch from that commit:
+
+     ->> git checkout -b new-branch-name <commit-hash>
+
+4. Undoing the Last Commit 
+
+   - If you’ve committed changes but want to undo that last commit, you can use:
+   ->> git reset --soft HEAD~1
+
+5. Recovering Deleted Files 
+
+  -  If you’ve deleted a file and committed that change, you can recover the deleted file by checking out the file from the previous commit:
+
+  ->> git checkout <commit-hash> -- path/to/your/file
