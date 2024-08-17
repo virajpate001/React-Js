@@ -1,5 +1,7 @@
  Previous Version
 
+https://chatgpt.com/share/34c3d1b3-653e-4d6b-9ff6-114dce6715b2
+
  1. Using git checkout to Restore a Specific File
 
      - If you’ve made changes to a file but haven’t committed them yet, you can revert the file to the last committed state:
