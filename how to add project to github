@@ -1,0 +1,35 @@
+To add your project to GitHub, follow these steps:
+
+1. **Initialize Git in your project directory**  
+   Open your terminal, navigate to your project’s root directory, and run:
+   ```bash
+   git init
+   ```
+
+2. **Add all files to the staging area**  
+   ```bash
+   git add .
+   ```
+
+3. **Commit your changes**  
+   Add a message describing the initial commit:
+   ```bash
+   git commit -m "Initial commit"
+   ```
+
+4. **Create a new repository on GitHub**  
+   Go to [GitHub](https://github.com/) and log in. Click on **New** (under "Repositories") to create a new repository. Give it a name, make it public or private as you wish, and then click **Create repository**.
+
+5. **Connect your local repository to GitHub**  
+   GitHub will give you commands to connect your local project to the new repository. Copy and paste these commands in your terminal:
+   ```bash
+   git remote add origin https://github.com/your-username/your-repo-name.git
+   ```
+
+6. **Push your code to GitHub**  
+   ```bash
+   git push -u origin main
+   ```
+   If your repository uses `master` as the default branch instead of `main`, replace `main` with `master` in the command above.
+
+After this, your project should be live on GitHub, and any future changes can be pushed with `git push`!
